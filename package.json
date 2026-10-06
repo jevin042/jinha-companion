@@ -1,0 +1,35 @@
+{
+  "name": "jinha-companion",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "preview": "wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "tavus:inspect": "node --env-file=.dev.vars scripts/tavus.mjs inspect",
+    "tavus:configure": "node --env-file=.dev.vars scripts/tavus.mjs configure"
+  },
+  "dependencies": {
+    "@anam-ai/js-sdk": "^4.27.1",
+    "@daily-co/daily-js": "^0.92.2",
+    "@supabase/supabase-js": "^2.117.1",
+    "lucide-react": "^1.48.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260924.1",
+    "@types/node": "^26.6.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0",
+    "wrangler": "^4.137.0"
+  }
+}

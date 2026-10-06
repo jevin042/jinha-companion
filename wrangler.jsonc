@@ -1,0 +1,49 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "jinha-companion",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": [
+      "/api/*"
+    ]
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "DEMO",
+        "class_name": "DemoCoordinator"
+      }
+    ]
+  },
+  "ai": {
+    "binding": "AI"
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "DemoCoordinator"
+      ]
+    }
+  ],
+  "vars": {
+    "CALLS_ENABLED": "false",
+    "TOTAL_BUDGET_SECONDS": "1200",
+    "USER_BUDGET_SECONDS": "1200",
+    "MAX_CALL_SECONDS": "300",
+    "ANAM_AVATAR_ID": "",
+    "ANAM_VOICE_ID": "",
+    "ANAM_LLM_ID": "",
+    "ANAM_FACE_IMAGE_URL": "",
+    "ANAM_CREDIT_POOL_ID": "",
+    "ANAM_MAX_CALL_SECONDS": "150",
+    "ANAM_TOTAL_BUDGET_SECONDS": "1500",
+    "ANAM_USER_BUDGET_SECONDS": "1080",
+    "TAVUS_ECHO_PAL_ID": "",
+    "TAVUS_FACE_IMAGE_URL": ""
+  }
+}
